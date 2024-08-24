@@ -1,3 +1,4 @@
+import sys
 """
 The plant employs 3 mechanics, each working 8 hours a day.
 The user specifies the number of cars to be serviced, then for each car he gives the number of hours needed to complete the mechanic's work.
@@ -5,8 +6,7 @@ We assign individual services to mechanics by selecting the mechanic with the lo
 If the number is the same, we choose the mechanic with the lower number. Working hours cannot be divided into mechanics.
 The program should return the number of days needed to dismiss any mechanic and the number of days needed for all mechanics to complete the jobs
 """
-print("Enter number of cars: ")
-car_count = int(input())
+car_count = int(sys.argv[1])
 workload1 = 0
 workload2 = 0
 workload3 = 0

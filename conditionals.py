@@ -42,15 +42,23 @@ else:
 
 # FizzBuzz task
 # number is dividable by 5 - print Fizz, and if dividable by 3 print Buzz. If both print FizzBuzz.
+# 15 = 3*5. Means, that every number that can be divided by 15, also can be divided by 5 or 3.
 print("Please enter a number:")
 number = int(input())
 
-if number % 5 == 0 or number % 3 == 0:
-    response = ""
-    if number % 5 == 0:
-        response += "Fizz"
-    if number % 3 == 0:
-        response += "Buzz"
-    print(response)
+if not number % 15:
+    print("FizzBuzz")
+elif not number % 5:
+    print("Fizz")
+elif not number % 3:
+    print("Buzz")
 else:
     print(f"Number {number} is not dividable by 3 or 5")
+
+
+# elif
+# if conditions is false:
+# elif condition is false:
+# elif conditions is true:
+#   line_of_code
+# else:

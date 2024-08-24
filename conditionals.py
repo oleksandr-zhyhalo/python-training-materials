@@ -46,11 +46,11 @@ print("Please enter a number:")
 number = int(input())
 
 if number % 5 == 0 or number % 3 == 0:
-    print(f"Number {number} is not FizzBuzz")
-else:
     response = ""
     if number % 5 == 0:
         response += "Fizz"
     if number % 3 == 0:
         response += "Buzz"
     print(response)
+else:
+    print(f"Number {number} is not dividable by 3 or 5")

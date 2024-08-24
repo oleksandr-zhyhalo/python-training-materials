@@ -5,8 +5,6 @@ code_line1;
 code_line2;
 }
 """
-from http.server import nobody_uid
-
 # if indentation
 if False:
     print(1)

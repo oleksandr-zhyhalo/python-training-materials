@@ -6,10 +6,10 @@ print("Hello anything, 12390, *10")
 print("Hello " + "World")
 print("Hello " * 10)
 #####
-#print("I am %s years old and again my age is %s" % (age, age)) # Old method and it's deprecated
+print("I am %s years old and again my age is %s" % (age, age)) # Old method and it's deprecated
 
 # Format method
-# print("I am {a} year old and my name is {b}. {b} is my real name".format(a=age, b=name))
+print("I am {a} year old and my name is {b}. {b} is my real name".format(a=age, b=name))
 
 # Shorthand method
 print(f"I am {age} years old, my name is {name}.")

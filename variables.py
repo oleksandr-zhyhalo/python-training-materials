@@ -12,25 +12,25 @@ myvar2 = "something"
 
 
 # Main variable types
-# age = 23 # Integer or int
-# Name = "Jakob" # String or str
-# height = 1.73 # Floating point number or float
-# isFemale = True # Boolean or bool
-# var3 = None
+age = 23 # Integer or int
+Name = "Jakob" # String or str
+height = 1.73 # Floating point number or float
+isFemale = True # Boolean or bool
+var3 = None
 
 # Variables arithmetic operation
-# a = 2
-# b = 19
-# print(a + b) # Addition
-# print(a - b) # Substructure
-# print(a * b) # Multiplication
-# print(b / a) # Division
-# print(a ** b) # Exponentiation
-# print (b % 2) # Modulus
-# print(b // a) # Floor division
+a = 2
+b = 19
+print(a + b) # Addition
+print(a - b) # Substructure
+print(a * b) # Multiplication
+print(b / a) # Division
+print(a ** b) # Exponentiation
+print (b % 2) # Modulus
+print(b // a) # Floor division
 
 # Variables assignment operation
-# b //= 5
+b //= 5
 
 # Boolean Operation
 a = 5

@@ -36,21 +36,21 @@ firstnames = firstnames_female + firstnames_male
 
 
 # Removing by index
-#del firstnames[-1]
+del firstnames[-1]
 print("----" * 5)
 
 # Remove by value first occurrence
-# firstnames.remove("Jakub")
-# print(firstnames)
+firstnames.remove("Jakub")
+print(firstnames)
 
 # remove the duplicates by dict conversion
-# firstnames = list(set(firstnames))
+firstnames = list(set(firstnames))
 
 # Funny solution
-# while "Jakub" in firstnames: firstnames.remove("Jakub")
+while "Jakub" in firstnames: firstnames.remove("Jakub")
 
 # Find index by value
-# print(firstnames.index("Adam", 3, 5))
+print(firstnames.index("Adam", 3, 5))
 print(firstnames)
 
 # Conditionals with lists

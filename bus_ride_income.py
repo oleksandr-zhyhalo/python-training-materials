@@ -20,14 +20,14 @@ while passenger_count < 20:
         child_count += 1
         passenger_count += 1
         continue
-    print("Enter number of glasses o wine: ")
-    wine_current = int(input())
-    while wine_current < 0 or wine_current > 3:
-        print("Wrong number of glasses")
-        print("Enter number of glasses o wine: ")
-        wine_current = int(input())
-    wine_count += wine_current
     adult_count += 1
     passenger_count += 1
+    while True:
+        print("Enter number of glasses o wine: ")
+        wine_current = int(input())
+        if 0 <= wine_current <= 3:
+            break
+        print("Wrong number of glasses")
+    wine_count += wine_current
 print(
     f"Adults: {adult_count}\nChild: {child_count}\nWine Glasses: {wine_count}\nIncome: {adult_count * 400 + child_count * 200 + wine_count * 10}")

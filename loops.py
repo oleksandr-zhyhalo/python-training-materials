@@ -1,12 +1,13 @@
 # While loop
 # while condition is true:
 #   code_line_1
+from itertools import product
 
 #Smple loop
-# counter = 0
-# while counter < 10:
-#     counter += 1
-#     print(f"{counter}: Hello")
+counter = 0
+while counter < 10:
+    counter += 1
+    print(f"{counter}: Hello")
 
 # Write a code if number is a prime.
 print(f"Input a number:")
@@ -24,3 +25,22 @@ if not factor:
 else:
     print(f"{number} is not prime")
 
+
+# break inside loop
+# while true:
+#   linux_command check if process exists:
+#       perform_some_action
+#       break
+#   wait(10)
+
+
+# program that prints the factorial
+counter = 0
+product = 1
+while counter < 11:
+    counter += 1
+    product *= counter
+    if product > 1000:
+        print(f"Exiting loop due to product being more than 1000")
+        break
+    print(f"{counter}: {product}")

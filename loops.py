@@ -1,13 +1,17 @@
 # While loop
 # while condition is true:
 #   code_line_1
-from itertools import product
+# from io import klass
+# from itertools import product
+from itertools import count
 
-# Smple loop
-# counter = 0
-# while counter < 10:
-#     counter += 1
-#     print(f"{counter}: Hello")
+# Simple loop
+counter = 0
+while counter < 10:
+    counter += 1
+    if counter == 5:
+        continue
+    print(f"{counter}: Hello")
 
 # Write a code if number is a prime.
 # print(f"Input a number:")
@@ -71,5 +75,23 @@ from itertools import product
 
 for i in range(10, 100, 10):
     if i == 40 or i == 50:
-        continue
+        break
     print(f"Loop 3: {i}")
+
+arr = [
+    [["a", "b", "c"], ["a", "b", "c"], ["a", "b", "c"]],
+    [["a", "b", "c"], ["a", "b", "c"], ["a", "b", "c"]],
+    [["a", "b", "c"], ["a", "b", "c"], ["a", "b", "c"]],
+]
+print(f"First element: {arr[0]}")
+print(f"Second element: {arr[1]}")
+
+counter = 0
+
+for i in arr:
+    for j in i:
+        for k in j:
+            if k == "a":
+                counter +=1
+print(counter)
+

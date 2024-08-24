@@ -58,7 +58,7 @@ var2 = True
 var3 = False
 var4 = False
 
-print(1==1 and 2==3) # and operator
+print(1==1 and 2==2) # and operator
 print(False or False or False or True) # or operator
 print(not False == True) # not operator
 print("*"*10)

@@ -1,0 +1,6 @@
+print("What your name?")
+user_name = input()
+print("What is your age?")
+user_age = int(input())
+print(f"You name is {user_name}\nYour age is {user_age}")
+print(type(user_age))

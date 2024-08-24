@@ -3,7 +3,7 @@
 #   code_line_1
 from itertools import product
 
-#Smple loop
+# Smple loop
 # counter = 0
 # while counter < 10:
 #     counter += 1
@@ -54,10 +54,22 @@ from itertools import product
 #   wait(10)
 
 # Continue example
-counter = 0
-while counter < 10:
-    counter += 1
-    if counter == 3:
-        print("Everything after continue now will be skipped")
+# counter = 0
+# while counter < 10:
+#     counter += 1
+#     if counter == 3:
+#         print("Everything after continue now will be skipped")
+#         continue
+#     print(counter)
+
+
+# For loops
+# for i in range(0,6):
+#     print(f"Loop 1: {i}")
+# for i in range(2,6):
+#     print(f"Loop 2: {i}")
+
+for i in range(10, 100, 10):
+    if i == 40 or i == 50:
         continue
-    print(counter)
+    print(f"Loop 3: {i}")

@@ -1,0 +1,51 @@
+"""
+A simple program that takes the age of all passengers on a bus.
+The cost of a child's ticket is PLN 200, the cost of an adult ticket is PLN 400.
+If the passenger is an adult, he can also order alcohol (maximum 3 glasses of wine, each for PLN 10).
+There can be a maximum of 20 passengers. The program calculates the total revenue from tickets.
+If the age of the passenger is 0 or the maximum number of passengers has been reached, the program exits printing the summary:
+Total revenue, Number of Adult Passengers, Number of Children, Number of Wine Glasses.
+"""
+wine_count = 0
+child_count = 0
+adult_count = 0
+passenger_count = 0
+
+
+def count_revenue(adults, kids, wine_glasses):
+    if wine_glasses / adults > 3:
+        print("Too much wine glasses ordered")
+        return None
+    return {
+        'adults': adults,
+        'children': kids,
+        'average glasses per adult': wine_glasses / adults,
+        'revenue': adults * 400 + kids * 200 + wine_glasses * 10
+    }
+
+result = count_revenue(12, 4, 33)
+if result:
+    print(f"Revenue is: {result['revenue']}")
+else:
+    print("There was an error in program")
+
+# while passenger_count < 20:
+#     print("Please enter age: ")
+#     age = int(input())
+#     if age <= 0:
+#         break
+#     elif age < 18:
+#         child_count += 1
+#         passenger_count += 1
+#         continue
+#     adult_count += 1
+#     passenger_count += 1
+#     while True:
+#         print("Enter number of glasses o wine: ")
+#         wine_current = int(input())
+#         if 0 <= wine_current <= 3:
+#             break
+#         print("Wrong number of glasses")
+#     wine_count += wine_current
+# print(
+#     f"Adults: {adult_count}\nChild: {child_count}\nWine Glasses: {wine_count}\nIncome: {adult_count * 400 + child_count * 200 + wine_count * 10}")

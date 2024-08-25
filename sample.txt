@@ -1,0 +1,10 @@
+Hello
+From
+Sample
+TXT
+File
+Hello from PyCharm
+Hello from PyCharm
+
+First line written
+Second line written

@@ -19,73 +19,70 @@
 }
 """
 
-students_scores = [
+def get_info_about_students_scores(students_scores: list) -> dict:
+    subject_total = {}
+    subject_counts = {}
+    student_averages = {}
+    subject_averages = {}
+    top_student = ""
+    bottom_student = ""
+    highest_average = float(0)
+    lowest_average = float(0)
+
+    for student in students_scores:
+        scores = {}
+        name = student['name']
+        for key, score in student.items():
+            if key != 'name':
+                scores[key] = score
+        if scores:
+            average_score = round(sum(scores.values()) / len(scores), 2)
+            student_averages[name] = average_score
+
+            if lowest_average == 0:
+                lowest_average = average_score
+            if average_score > highest_average:
+                highest_average = average_score
+                top_student = name
+            if average_score < lowest_average:
+                lowest_average = average_score
+                bottom_student = name
+
+            for subject, score in scores.items():
+                if subject in subject_total:
+                    subject_total[subject] += score
+                    subject_counts[subject] += 1
+                else:
+                    subject_total[subject] = score
+                    subject_counts[subject] = 1
+
+    for subject in subject_total:
+        subject_averages[subject] = round(subject_total[subject] / subject_counts[subject], 2)
+
+    return {
+        'Student Average Scores': student_averages,
+        'Average Scores by Subject': subject_averages,
+        'Best Student': top_student,
+        'Worst Student': bottom_student
+    }
+
+
+scores_semester_1 = [
     {'name': 'Alice', 'math': 85, 'science': 92, 'english': 88},
     {'name': 'Bob', 'math': 79, 'english': 90},
     {'name': 'Charlie', 'science': 87, 'english': 85},
     {'name': 'David', 'math': 92, 'science': 89, 'english': 93},
-    {'name' : 'Jakob'}
+    {'name': 'Jakob', 'math' : 32}
 ]
 
-subject_total = {}
-subject_counts = {}
-student_averages = {}
-subject_averages = {}
-top_student = ""
-bottom_student = ""
-highest_average = float(0)
-lowest_average = float(0)
+scores_semester_2 = [
+    {'name': 'Alice', 'math': 56, 'science': 91, 'english': 88},
+    {'name': 'Bob', 'math': 79, 'english': 67},
+    {'name': 'Charlie', 'science': 87, 'english': 66},
+    {'name': 'David', 'math': 81, 'science': 74, 'english': 99},
+]
 
-for student in students_scores:
-    print(f"Student working on: {student}")
-    scores = {}
-    name = student['name']
-    print(f"Student name working on is: {name}")
-    print(f"{name} student items is {student.items()}")
-    for key, score in student.items(): # Iteration over  dict_items([('name', 'Alice'), ('math', 85), ('science', 92), ('english', 88)])
-        if key != 'name':
-            scores[key] = score
-    print(f"Scores for student {name} are {scores}")
-    if scores:
-        # scores are {'math': 85, 'science': 92, 'english': 88}
-        average_score = round(sum(scores.values()) / len(scores), 2)
-        print(f"Avarage score for {name} is {average_score}")
-        student_averages[name] = average_score
-        print(f"Student averages currently looks like: {student_averages}")
+sem_1_info = get_info_about_students_scores(scores_semester_1)
+sem_2_info = get_info_about_students_scores(scores_semester_2)
 
-        if lowest_average == 0:
-            lowest_average = average_score
-            print(f"Doing initialization for lowest_average")
-        if average_score > highest_average:
-            highest_average = average_score
-            top_student = name
-            print(f"Student's {name} average score of {average_score} is bigger then current highest")
-        if average_score < lowest_average:
-            lowest_average = average_score
-            bottom_student = name
-            print(f"Student's {name} average score of {average_score} is lower then current lower")
-
-        print(f"Currently scores looks like: {scores}")
-        for subject, score in scores.items():
-            print(f"Student: {name}, Subject: {subject}, Score: {score}")
-            if subject in subject_total:
-                subject_total[subject] += score
-                subject_counts[subject] += 1
-            else:
-                subject_total[subject] = score
-                subject_counts[subject] = 1
-            print(f"subjects_total now is: {subject_total}")
-            print(f"subject_count now is: {subject_counts}")
-
-        print('------' * 10)
-for subject in subject_total:
-    subject_averages[subject] = round(subject_total[subject] / subject_counts[subject], 2)
-
-final_dict = {
-    'averages': student_averages,
-    'subject_averages': subject_averages,
-    'top_student': top_student,
-    'bottom_student': bottom_student
-}
-
-print(final_dict)
+print(sem_1_info)

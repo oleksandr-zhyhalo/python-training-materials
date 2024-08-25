@@ -3,7 +3,6 @@ from time import sleep
 from types import NoneType
 import os
 
-# Reading a file
 file = open('sample.txt', 'r+')
 # read line by line
 for line in file:
